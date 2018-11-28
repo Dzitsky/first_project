@@ -13,15 +13,23 @@ namespace ConsoleApp6
         public string Name { get; set; }
         public string Language { get; set; }
         public uint Age { get; set; }
-        public Employee(string name,string language, uint age)
+        public int Num_department { get; set; }
+        public uint Salary { get; set; }
+        public string Position { get; set; }
+        public Employee(string name,string language, uint age, int department, uint salary, string position)
         {
             Name = name;
             Language = language;
             Age = age;//задали конструктор
+            Num_department = department;
+            Salary = salary;
+            Position = position;
         }
         public override string ToString()//без этого форматирования выводит название проекта
         {
-            return string.Format("{0}{1}{2}", Name, Language, Age);
+            return string.Format("{0}\t{1}\t{2}", $"ФИО: {Name}", $"Язык программирования: {Language}", $"Возраст:{Age}", $"Номер отдела:{Num_department}",
+            $"зарплата:{Salary}", $"Должность: { Position}");
+            
         }
     }
     public class EmployeeCollection
@@ -66,7 +74,13 @@ namespace ConsoleApp6
                     string language = Console.ReadLine();
                     Console.WriteLine("Введите возраст:");
                     uint age = uint.Parse(Console.ReadLine());
-                    Employee b = new Employee($"ФИО: { name }",$"Язык программирования:{language}",age);
+                    Console.WriteLine("Введите номер отдела:");
+                    int department = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Зарплата:");
+                    uint salary = uint.Parse(Console.ReadLine());
+                    Console.WriteLine("Должность:");
+                    string position = Console.ReadLine();
+                    Employee b = new Employee(name, language, age, department, salary, position);
                     sw.WriteLine(b);//Записываем текст
                     sw.WriteLine("------------------------");
                     break;
@@ -81,7 +95,7 @@ namespace ConsoleApp6
         {
             var collection = new EmployeeCollection();//создали новую коллекцию
             var work = new WorkWithFile(collection);//передали коллецию
-            Console.WriteLine(collection);
+            Console.Write(collection);
             Console.ReadKey();
             
 
