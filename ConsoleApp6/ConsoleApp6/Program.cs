@@ -27,8 +27,7 @@ namespace ConsoleApp6
         }
         public override string ToString()//без этого форматирования выводит название проекта
         {
-            return string.Format("{0}\t{1}\t{2}", $"ФИО: {Name}", $"Язык программирования: {Language}", $"Возраст:{Age}", $"Номер отдела:{Num_department}",
-            $"зарплата:{Salary}", $"Должность: { Position}");
+            return string.Format("{0}\n{1}\n{2}\n{3}\n{4}\n{5}", $"ФИО: {Name}", $"Язык программирования: {Language}", $"Возраст:{Age}", $"Номер отдела:{Num_department}",$"зарплата:{Salary}", $"Должность: { Position}");
             
         }
     }
@@ -82,7 +81,7 @@ namespace ConsoleApp6
                     string position = Console.ReadLine();
                     Employee b = new Employee(name, language, age, department, salary, position);
                     sw.WriteLine(b);//Записываем текст
-                    sw.WriteLine("------------------------");
+                    sw.WriteLine("--------------------------------------------------------------");
                     break;
                  }
             }    
