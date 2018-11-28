@@ -1,9 +1,9 @@
-using System;
+п»їusing System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Collections;//обобщенные коллекции
+using System.Collections;//РѕР±РѕР±С‰РµРЅРЅС‹Рµ РєРѕР»Р»РµРєС†РёРё
 using System.IO;
 
 namespace ConsoleApp6
@@ -17,9 +17,9 @@ namespace ConsoleApp6
         {
             Name = name;
             Language = language;
-            Age = age;//задали конструктор
+            Age = age;//Р·Р°РґР°Р»Рё РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
         }
-        public override string ToString()//без этого форматирования выводит название проекта
+        public override string ToString()//Р±РµР· СЌС‚РѕРіРѕ С„РѕСЂРјР°С‚РёСЂРѕРІР°РЅРёСЏ РІС‹РІРѕРґРёС‚ РЅР°Р·РІР°РЅРёРµ РїСЂРѕРµРєС‚Р°
         {
             return string.Format("{0}{1}{2}", Name, Language, Age);
         }
@@ -29,7 +29,7 @@ namespace ConsoleApp6
         public List<Employee> Data { get; set; }
         public EmployeeCollection()
         {
-            Data = new List<Employee>();//коллекция с сотрудниками типа Employee
+            Data = new List<Employee>();//РєРѕР»Р»РµРєС†РёСЏ СЃ СЃРѕС‚СЂСѓРґРЅРёРєР°РјРё С‚РёРїР° Employee
            
         }
         
@@ -40,34 +40,34 @@ namespace ConsoleApp6
     {
         string writePath = @"D:\text.txt";
         string readPath = @"D:\text.txt";
-        public WorkWithFile(EmployeeCollection collection)//коллекция 
+        public WorkWithFile(EmployeeCollection collection)//РєРѕР»Р»РµРєС†РёСЏ 
         {
-            using (StreamReader sr = new StreamReader(readPath, System.Text.Encoding.Default))//Считываем построчно
+            using (StreamReader sr = new StreamReader(readPath, System.Text.Encoding.Default))//РЎС‡РёС‚С‹РІР°РµРј РїРѕСЃС‚СЂРѕС‡РЅРѕ
             {
                 string line;
                 while ((line = sr.ReadLine()) != null)
                 {
                     Console.WriteLine(line);
                 }
-                //foreach (Employee s in collection.Data)// Выводим нашу коллекцию
+                //foreach (Employee s in collection.Data)// Р’С‹РІРѕРґРёРј РЅР°С€Сѓ РєРѕР»Р»РµРєС†РёСЋ
                 //{
                 //    Console.WriteLine(s);
                 //    Console.ReadLine();
                 //}
             }
            
-            using (StreamWriter sw = new StreamWriter(writePath, true, System.Text.Encoding.Default))//Записываем в файл
+            using (StreamWriter sw = new StreamWriter(writePath, true, System.Text.Encoding.Default))//Р—Р°РїРёСЃС‹РІР°РµРј РІ С„Р°Р№Р»
             {
                 while (true)
                 {
-                    Console.WriteLine("Введите Ф.И.О.:");
+                    Console.WriteLine("Р’РІРµРґРёС‚Рµ Р¤.Р.Рћ.:");
                     string name = Console.ReadLine();
-                    Console.WriteLine("Введите язык программирования:");
+                    Console.WriteLine("Р’РІРµРґРёС‚Рµ СЏР·С‹Рє РїСЂРѕРіСЂР°РјРјРёСЂРѕРІР°РЅРёСЏ:");
                     string language = Console.ReadLine();
-                    Console.WriteLine("Введите возраст:");
+                    Console.WriteLine("Р’РІРµРґРёС‚Рµ РІРѕР·СЂР°СЃС‚:");
                     uint age = uint.Parse(Console.ReadLine());
-                    Employee b = new Employee($"ФИО: { name }",$"Язык программирования:{language}",age);
-                    sw.WriteLine(b);//Записываем текст
+                    Employee b = new Employee($"Р¤РРћ: { name }",$"РЇР·С‹Рє РїСЂРѕРіСЂР°РјРјРёСЂРѕРІР°РЅРёСЏ:{language}",age);
+                    sw.WriteLine(b);//Р—Р°РїРёСЃС‹РІР°РµРј С‚РµРєСЃС‚
                     sw.WriteLine("------------------------");
                     break;
                  }
@@ -79,8 +79,8 @@ namespace ConsoleApp6
 
         static void Main(string[] args)
         {
-            var collection = new EmployeeCollection();//создали новую коллекцию
-            var work = new WorkWithFile(collection);//передали коллецию
+            var collection = new EmployeeCollection();//СЃРѕР·РґР°Р»Рё РЅРѕРІСѓСЋ РєРѕР»Р»РµРєС†РёСЋ
+            var work = new WorkWithFile(collection);//РїРµСЂРµРґР°Р»Рё РєРѕР»Р»РµС†РёСЋ
             Console.WriteLine(collection);
             Console.ReadKey();
             
