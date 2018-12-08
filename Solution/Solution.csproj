@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C3580252-820C-49D8-8663-D1B6C721FC30}</ProjectGuid>
+    <ProjectGuid>{A978D0FD-FE20-472B-AC99-DC8A41886B51}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ConsoleApp6</RootNamespace>
-    <AssemblyName>ConsoleApp6</AssemblyName>
+    <RootNamespace>Solution</RootNamespace>
+    <AssemblyName>Solution</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,8 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Employee.cs" />
+    <Compile Include="IEmployeeManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="EmployeeManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
