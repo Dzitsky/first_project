@@ -4,20 +4,24 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace ConsoleApp6
+namespace ConsoleApp6 // Переименовать неймспейс
 {
-    public class EmployeeManager : IEmployeeManager
+    public class EmployeeManager : IEmployeeManager // Реализовать новый интерфейс (см. замечания к IEmployeeManager), для методов, которые еще не реализованы, добавить пока заглушки
     {
+        // Тут xml-комментарии не нужны, к тому же это private поле и не будет видно извне
         /// <summary>
         /// Путь к файлу
         /// </summary>
         private const string filePath = @"D:\text.txt";
 
+        // То же самое
         /// <summary>
         /// Поле для <see cref="Employees"/>
         /// </summary>
         private readonly IList<Employee> employees = new List<Employee>();
 
+        //TODO: Переделать по новому интерфейсу, вынести все обращения к Console в class Program (а все обращения к файлу (sw/rw), в идеале, в новый класс EmployeeRepository c интерфейсом IEmployeeRepository)
+        
         public void AddEmployees()
         {
             var canAddNewEmployees = true;
@@ -57,7 +61,7 @@ namespace ConsoleApp6
         /// </summary>
         public IEnumerable<Employee> FindEmployees(string name = null, string language = null,
             int? age = null, int? department = null,
-            int? salary = null, string position = null)
+            int? salary = null, string position = null) // TODO: Тут явно напрашивается класс-фильтр )
         {
             var result = new List<Employee>();
             if (!string.IsNullOrWhiteSpace(name))
@@ -78,6 +82,8 @@ namespace ConsoleApp6
             return result;
         }
 
+        // TODO: А эти два метода просятся в IEmployeeRepository
+        
         /// <summary>
         /// Сохраняет сотрудников в файл.
         /// </summary>
