@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ConsoleApp6
+namespace ConsoleApp6 // Переименовать неймспейс
 {
     public class Program
     {
@@ -18,6 +18,8 @@ namespace ConsoleApp6
                 int cmd;
                 if (int.TryParse(Console.ReadLine(), out cmd))
                 {
+                    // TODO: Доработать в соответсвии с замечаниями в EmployeeManager\IEmployeeManager
+                    
                     switch (cmd)
                     {
                         case 1:
