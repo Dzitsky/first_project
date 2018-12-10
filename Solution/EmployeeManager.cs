@@ -18,14 +18,6 @@ namespace ConsoleApp6
         /// </summary>
         private readonly IList<Employee> employees = new List<Employee>();
 
-        /// <summary>
-        /// Сотрудники.
-        /// </summary>
-        //public IEnumerable<Employee> Employees
-        //{
-        //    get { return employees; }
-        //}
-
         public void AddEmployees()
         {
             var canAddNewEmployees = true;
